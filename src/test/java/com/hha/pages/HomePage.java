@@ -24,6 +24,9 @@ public class HomePage extends BaseClass{
 	
 	@FindBy(name="proceedToRetailCheckout")
 	private static WebElement proceedToBuyButton;
+	
+	@FindBy(xpath="//div[contains(@class,'rush-component s-featured-result-item')]//span[@class='a-price-whole'][normalize-space()='70,900']")
+	private static WebElement productPrice;
 
 	// constructor - to initialize the webelements
 
@@ -34,7 +37,7 @@ public class HomePage extends BaseClass{
 	// action methods
 	public void searchProduct()
 	{
-		searchBox.sendKeys("shoe");
+		searchBox.sendKeys("iphone 15");
 		searchBox.sendKeys(Keys.ENTER);
 	}
 	
@@ -56,6 +59,10 @@ public class HomePage extends BaseClass{
 	public static void proceedToBuy()
 	{
 		proceedToBuyButton.click();
+	}
+	public String getProductPrice()
+	{
+		return productPrice.getText();
 	}
 
 }

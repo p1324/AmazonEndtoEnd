@@ -7,9 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.hha.utility.DatabaseReader;
+
 public class BaseClass {
 
 	public static WebDriver driver;
+	public static DatabaseReader databaseReader= new DatabaseReader();
 	@BeforeClass
 	public void setUp()
 	{
