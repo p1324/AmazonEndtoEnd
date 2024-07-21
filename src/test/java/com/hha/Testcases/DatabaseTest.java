@@ -16,10 +16,11 @@ public class DatabaseTest extends BaseClass {
 	{
 		 homepage= new HomePage(driver);
 		 homepage.searchProduct();
-		String actualPrice=homepage.getProductPrice();
+		String actPrice=homepage.getProductPrice();//70,900 from amazon
+		String actualPrice=actPrice.replaceAll("[^A-Za-z0-9]", "");//70900
 	
-		Integer Price=databaseReader.getPriceData();
-		String expectedPrice=String.valueOf(Price);
+		Integer price=databaseReader.getPriceData();
+		String expectedPrice=String.valueOf(price);//70900 from db
 		
 		Assert.assertEquals(actualPrice, expectedPrice);
 		
